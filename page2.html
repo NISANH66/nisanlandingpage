@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+
+        }
+
+        section {
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            margin-bottom: 10px;
+
+        }
+
+        .label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        label {
+            text-align: left;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            padding: 10px;
+            border: 1px solid #ccc;
+            width: 100%;
+        }
+
+        textarea {
+            height: 150px;
+        }
+
+        button[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Contact Me</h1>
+
+    <section id="contact-info">
+        <h2>Contact Information</h2>
+        <p>I wold love to hear from you! Here are ways to get in touch:</p>
+        <ul>
+            <li>
+                <span class="label">Email:</span>
+                <a href="mailto:nisan8695@gmail.com">nisan8695@gmail.com</a>
+            </li>
+            <li>
+                <span class="label">Phone:</span>
+                <a href="tel:+972 0543995199">+972 0543995199</a>
+            </li>
+        </ul>
+    </section>
+
+    <section id="contact-form">
+        <h2>Send Me a Message</h2>
+        <form action="form_handler.php" method="post"> <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" required><br>
+            <label for="email">Your Email:</label>
+            <input type="email" id="email" name="email" required><br>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea><br>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+</body>
+
+</html>

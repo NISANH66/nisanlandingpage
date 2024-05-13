@@ -1,113 +1,431 @@
 body {
-    font-family: sans-serif;
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    background-color: #f5f5f5;
-}
-
-header,
-main,
-footer {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #3d4b5a;
-    margin-left: 5px;
+    color: #333;
 }
 
 header {
     background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.logo {
-    float: left;
-    font-size: 30px;
-    font-weight: bold;
-    width: 250px;
-    height: 100px;
-}
-
-.logo2 {
-    float: center;
-    font-weight: bold;
-    width: 350px;
-    height: 300px;
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
 }
 
 nav {
-    margin-left: 20px;
-}
-
-nav ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
     display: flex;
-}
-
-nav li {
-    margin-right: 20px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
 }
 
 nav a {
     text-decoration: none;
-    color: #201131;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    text-shadow: 5px 2px 4px rgba(48, 48, 48, 0.5);
-    transition: color 0.3s ease;
-    font-size: large;
+    color: #333;
+    padding: 10px 15px;
+    font-weight: bold;
 }
 
 nav a:hover {
-    color: #007bff;
+    background-color: #eee;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 0;
 }
 
 main {
-    text-align: center;
+    padding-top: 80px;
+    /* Account for header height */
 }
 
 .hero {
-    padding: 50px;
+    display: flex;
+    align-items: center;
+    min-height: 60vh;
+    /* Set minimum hero height */
+    background-image: url("laptop2.png");
+    /* Replace with your background image */
+    background-position: center;
+    background-size: cover;
+    padding: 40px;
 }
 
-.hero h1 {
-    font-size: 2em;
+.hero-content {
+    color: #000000;
+    background-color: white;
+    max-width: 500px;
+    text-align: center;
+    box-shadow: #000000;
+}
+
+.hero h2 {
+    font-size: 1.8em;
     margin-bottom: 20px;
-    color: #291844;
 }
 
 .hero p {
-    font-size: 1.2em;
+    font-size: 1em;
     line-height: 1.5;
-    margin-bottom: 40px;
-    color: #291844;
+    margin-bottom: 30px;
 }
 
-.button1 {
-    background-color: #1ae321;
+.hero a {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 10px 20px;
     border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
     border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
 }
 
-.button1:hover {
-    background-color: #46b94a;
+.hero img {
+    width: 100%;
+    max-width: 500px;
+    /* Adjust image width as needed */
+    display: none;
+    /* Hide image on larger screens */
+    align-items: center;
 }
+
+@media (min-width: 768px) {
+    .hero {
+        background-image: none;
+        /* Disable background image on larger screens */
+    }
+
+    .hero-content {
+        text-align: left;
+        max-width: 70%;
+    }
+
+    .hero img {
+        display: block;
+        /* Show image on larger screens */
+    }
+}
+
+.services {
+    padding: 40px 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.service-card {
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    margin: 15px;
+    width: calc(33% - 30px);
+    /* Responsive sizing for cards */
+}
+
+.service-card img {
+    margin-bottom: 15px;
+    width: 80px;
+    height: 80px;
+}
+
+.service-card h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.portfolio {
+    padding: 40px 0;
+}
+
+.portfolio-item {
+    display: inline-block;
+    margin: 10px;
+    position: relative;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    /* Maintain aspect ratio */
+}
+
+.portfolio-item .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    /* Stack content vertically */
+}
+
+.portfolio-item:hover .overlay {
+    opacity: 1;
+}
+
+.portfolio-item .overlay h3 {
+    color: #fff;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.portfolio-item .overlay p {
+    color: #fff;
+    font-size: 0.8em;
+    margin-bottom: 15px;
+}
+
+.portfolio-item .overlay a {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.about-us {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.about-us p {
+    font-size: 1em;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+.about-us a {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Contact Section Styling */
+.contact {
+    padding: 80px 0;
+    /* Adjust padding as needed */
+    background-color: #f2f2f2;
+    /* Light gray background */
+    text-align: center;
+    /* Center content horizontally */
+}
+
+.contact h2 {
+    font-size: 2em;
+    /* Adjust heading size */
+    color: #333;
+    /* Dark gray heading color */
+    margin-bottom: 20px;
+    /* Add space after heading */
+}
+
+.contact p {
+    font-size: 1em;
+    /* Adjust paragraph text size */
+    color: #666;
+    /* Light gray text color */
+    line-height: 1.5;
+    /* Adjust line spacing for readability */
+    margin-bottom: 20px;
+    /* Add space between paragraphs */
+}
+
+.contact form {
+    display: flex;
+    /* Arrange form elements in a row */
+    flex-wrap: wrap;
+    /* Allow elements to wrap on smaller screens */
+    justify-content: center;
+    /* Center form elements horizontally */
+    margin-bottom: 40px;
+    /* Add space after form */
+}
+
+.contact form label {
+    width: 40%;
+    /* Adjust label width as needed */
+    margin-bottom: 10px;
+    /* Add space below labels */
+    font-weight: bold;
+    /* Emphasize labels */
+}
+
+.contact form input,
+.contact form textarea {
+    width: 50%;
+    /* Adjust input/textarea width */
+    padding: 10px;
+    /* Add padding for better user experience */
+    border: 1px solid #ccc;
+    /* Light gray border */
+    border-radius: 5px;
+    /* Rounded corners for a cleaner look */
+    font-size: 1em;
+    /* Adjust input/textarea text size */
+    box-sizing: border-box;
+    /* Ensure padding doesn't affect width */
+}
+
+.contact form textarea {
+    height: 100px;
+    /* Adjust textarea height as needed */
+}
+
+.contact form button {
+    background-color: #007bff;
+    /* Blue button color */
+    color: #fff;
+    /* White button text color */
+    padding: 10px 20px;
+    /* Adjust button padding */
+    border: none;
+    /* Remove button border */
+    border-radius: 5px;
+    /* Rounded corners for a cleaner look */
+    font-size: 1em;
+    /* Adjust button text size */
+    cursor: pointer;
+    /* Indicate clickable element */
+    transition: background-color 0.3s ease;
+    /* Smooth color transition */
+}
+
+.contact form button:hover {
+    background-color: #0069d9;
+    /* Darker blue on hover */
+}
+
+/* Contact Information Styling */
+
+.contact-info {
+    display: inline-block;
+    /* Display contact info inline */
+    margin-left: 10px;
+    /* Add space between icon and text */
+}
+
+.contact-icon {
+    font-size: 1.5em;
+    /* Adjust icon size */
+    color: #333;
+    /* Dark gray icon color */
+}
+
+.contact-info a {
+    color: #007bff;
+    /* Blue link color */
+    text-decoration: none;
+    /* Remove underline by default */
+    transition: color 0.3s ease;
+    /* Smooth color transition */
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+    /* Add underline on hover */
+}
+
+/* Responsive Media Query (Optional) */
+@media (max-width: 768px) {
+    .contact form label {
+        width: 100%;
+        /* Adjust label width for smaller screens */
+    }
+
+    .contact form input,
+    .contact form textarea {
+        width: 100%;
+        /* Adjust input/textarea width for smaller screens */
+    }
+}
+
 
 
 footer {
-    background-color: #f1f1f1;
-    padding: 10px;
+    background-color: #f2f2f2;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    font-size: 0.8em;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+footer a {
+    color: #333;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+
+@media (max-width: 768px) {
+    footer p {
+        font-size: 0.7em;
+    }
+}
+
+@media (max-width: 768px) {
+    header nav {
+        padding: 10px 0;
+    }
+
+    header nav a {
+        padding: 5px 10px;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .services,
+    .portfolio {
+        justify-content: center;
+    }
+
+    .service-card,
+    .portfolio-item {
+        width: calc(50% - 20px);
+        margin: 10px;
+    }
+
+    .about-us p,
+    .contact form label {
+        width: 100%;
+    }
+
+    .contact form input,
+    .contact form textarea {
+        width: 100%;
+    }
 }

@@ -3,6 +3,7 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
+    background-image: linear-gradient(to bottom, rgb(253, 253, 253) 0%, rgb(152, 152, 152) 100%);
 }
 
 header {
@@ -62,6 +63,7 @@ main {
     max-width: 500px;
     text-align: center;
     box-shadow: #000000;
+    border-radius: 20px;
 }
 
 .hero h2 {

@@ -225,6 +225,7 @@ main {
     border-radius: 5px;
     text-decoration: none;
     font-weight: bold;
+    place-items: center;
 }
 
 /* Contact Section Styling */

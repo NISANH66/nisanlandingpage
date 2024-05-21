@@ -2,18 +2,25 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    color: #333;
-    background-image: linear-gradient(to bottom, rgb(253, 253, 253) 0%, rgb(152, 152, 152) 100%);
+    color: #000000;
+    background-image: linear-gradient(to bottom, rgb(253, 253, 253) 0%, #95dcd9 100%);
 }
 
 header {
-    background-color: #fff;
+    background-color: #95dcd9;
     padding: 20px 0;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 10;
+}
+
+#head22 {
+    font-family: "Freeman", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-shadow: 2px 2px 4px rgb(255, 255, 255);
 }
 
 nav {
@@ -50,7 +57,7 @@ main {
     align-items: center;
     min-height: 60vh;
     /* Set minimum hero height */
-    background-image: url("laptop2.png");
+    background-image: url("nisann.JPG");
     /* Replace with your background image */
     background-position: center;
     background-size: cover;
@@ -149,6 +156,7 @@ main {
 
 .portfolio {
     padding: 40px 0;
+    text-align: center;
 }
 
 .portfolio-item {
@@ -258,72 +266,6 @@ main {
     /* Add space between paragraphs */
 }
 
-.contact form {
-    display: flex;
-    /* Arrange form elements in a row */
-    flex-wrap: wrap;
-    /* Allow elements to wrap on smaller screens */
-    justify-content: center;
-    /* Center form elements horizontally */
-    margin-bottom: 40px;
-    /* Add space after form */
-}
-
-.contact form label {
-    width: 40%;
-    /* Adjust label width as needed */
-    margin-bottom: 10px;
-    /* Add space below labels */
-    font-weight: bold;
-    /* Emphasize labels */
-}
-
-.contact form input,
-.contact form textarea {
-    width: 50%;
-    /* Adjust input/textarea width */
-    padding: 10px;
-    /* Add padding for better user experience */
-    border: 1px solid #ccc;
-    /* Light gray border */
-    border-radius: 5px;
-    /* Rounded corners for a cleaner look */
-    font-size: 1em;
-    /* Adjust input/textarea text size */
-    box-sizing: border-box;
-    /* Ensure padding doesn't affect width */
-}
-
-.contact form textarea {
-    height: 100px;
-    /* Adjust textarea height as needed */
-}
-
-.contact form button {
-    background-color: #007bff;
-    /* Blue button color */
-    color: #fff;
-    /* White button text color */
-    padding: 10px 20px;
-    /* Adjust button padding */
-    border: none;
-    /* Remove button border */
-    border-radius: 5px;
-    /* Rounded corners for a cleaner look */
-    font-size: 1em;
-    /* Adjust button text size */
-    cursor: pointer;
-    /* Indicate clickable element */
-    transition: background-color 0.3s ease;
-    /* Smooth color transition */
-}
-
-.contact form button:hover {
-    background-color: #0069d9;
-    /* Darker blue on hover */
-}
-
-/* Contact Information Styling */
 
 .contact-info {
     display: inline-block;

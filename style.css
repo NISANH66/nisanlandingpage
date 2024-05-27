@@ -8,7 +8,7 @@ body {
 
 header {
     background-color: #95dcd9;
-    padding: 20px 0;
+    padding: 10px 0;
     position: fixed;
     top: 0;
     left: 0;
@@ -48,7 +48,7 @@ h1 {
 }
 
 main {
-    padding-top: 80px;
+    padding-top: 90px;
     /* Account for header height */
 }
 

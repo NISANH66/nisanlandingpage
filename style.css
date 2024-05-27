@@ -3,7 +3,7 @@ body {
     margin: 0;
     padding: 0;
     color: #000000;
-    background-image: linear-gradient(to bottom, rgb(253, 253, 253) 0%, #95dcd9 100%);
+    background-image: linear-gradient(to bottom, rgb(253, 253, 253) 0%, #328ad3 100%);
 }
 
 header {
@@ -226,6 +226,24 @@ main {
 }
 
 .about-us a {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    place-items: center;
+}
+
+.hebrow {
+
+    padding: 40px 0;
+    text-align: center;
+
+}
+
+.hebrow a {
     background-color: #007bff;
     color: #fff;
     padding: 10px 20px;

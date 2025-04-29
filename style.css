@@ -1,148 +1,134 @@
+/* Modernized and improved styles */
+
+/* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Rubik', sans-serif;
     margin: 0;
     padding: 0;
-    color: #000000;
-    background-image: linear-gradient(to bottom, rgb(253, 253, 253) 0%, #95dcd9 100%);
+    color: #333;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    line-height: 1.6;
 }
 
 header {
-    background-color: #95dcd9;
-    padding: 10px 0;
+    padding: 5px 10px;
+    /* Keep minimal padding */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 10;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.8);
+    /* Slightly transparent background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-#head22 {
-    font-family: "Freeman", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    text-shadow: 2px 2px 4px rgb(255, 255, 255);
+/* Center-align the header text */
+header {
+    text-align: center;
+    /* Center-align all text in the header */
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
 }
 
 nav a {
     text-decoration: none;
-    color: #333;
+    color: #007bff;
     padding: 10px 15px;
-    font-weight: bold;
+    font-weight: 500;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    border-radius: 5px;
 }
 
 nav a:hover {
-    background-color: #eee;
+    background-color: #007bff;
+    color: #fff;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
 }
 
 h1 {
-    text-align: center;
-    font-size: 2em;
-    margin-bottom: 0;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    /* Keep the reduced font size */
+    margin: 10px 0;
+    /* Minimal margin to save space */
 }
 
 main {
-    padding-top: 90px;
-    /* Account for header height */
+    padding-top: 100px;
 }
 
+/* Hero Section */
 .hero {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    min-height: 60vh;
-    /* Set minimum hero height */
-    background-image: url("nisann.JPG");
-    /* Replace with your background image */
-    background-position: center;
-    background-size: cover;
-    padding: 40px;
-}
-
-.hero-content {
-    color: #000000;
-    background-color: white;
-    max-width: 500px;
+    justify-content: center;
+    min-height: 80vh;
+    background: linear-gradient(135deg, #007bff, #00d4ff);
+    color: #fff;
     text-align: center;
-    box-shadow: #000000;
-    border-radius: 20px;
+    padding: 20px;
+    border-radius: 10px;
 }
 
 .hero h2 {
-    font-size: 1.8em;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
     margin-bottom: 20px;
 }
 
 .hero p {
-    font-size: 1em;
-    line-height: 1.5;
+    font-size: 1.2rem;
     margin-bottom: 30px;
 }
 
 .hero a {
-    background-color: #007bff;
-    color: #ffffff;
+    background: #fff;
+    color: #007bff;
     padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
+    border-radius: 50px;
     font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
-.hero img {
-    width: 100%;
-    max-width: 500px;
-    /* Adjust image width as needed */
-    display: none;
-    /* Hide image on larger screens */
-    align-items: center;
+.hero a:hover {
+    background: #007bff;
+    color: #fff;
+    transform: scale(1.1);
 }
 
-@media (min-width: 768px) {
-    .hero {
-        background-image: none;
-        /* Disable background image on larger screens */
-    }
-
-    .hero-content {
-        text-align: left;
-        max-width: 70%;
-    }
-
-    .hero img {
-        display: block;
-        /* Show image on larger screens */
-    }
-}
-
-#serv {
-    text-align: center;
-
-
-}
-
+/* Services Section */
 .services {
-    padding: 40px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 40px 20px;
+    background: #f9f9f9;
 }
 
 .service-card {
-    background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
     padding: 20px;
     text-align: center;
-    margin: 15px;
-    width: calc(33% - 30px);
-    /* Responsive sizing for cards */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .service-card img {
@@ -152,31 +138,46 @@ main {
 }
 
 .service-card h3 {
-    font-size: 1.2em;
+    font-size: 1.5rem;
     margin-bottom: 10px;
 }
 
 .service-card p {
-    font-size: 1em;
-    line-height: 1.5;
+    font-size: 1rem;
+    color: #666;
 }
 
+#hero-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Portfolio Section */
 .portfolio {
-    padding: 40px 0;
+    padding: 40px 20px;
+    background: #fff;
     text-align: center;
 }
 
 .portfolio-item {
-    display: inline-block;
-    margin: 10px;
     position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: scale(1.05);
 }
 
 .portfolio-item img {
     width: 100%;
-    height: 250px;
-    object-fit: cover;
-    /* Maintain aspect ratio */
+    height: auto;
+    display: block;
+    border-radius: 10px;
 }
 
 .portfolio-item .overlay {
@@ -185,14 +186,14 @@ main {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    opacity: 0;
-    transition: opacity 0.3s ease;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    /* Stack content vertically */
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 .portfolio-item:hover .overlay {
@@ -200,202 +201,208 @@ main {
 }
 
 .portfolio-item .overlay h3 {
-    color: #fff;
-    font-size: 1.2em;
+    font-size: 1.5rem;
     margin-bottom: 10px;
-}
-
-.portfolio-item .overlay p {
-    color: #fff;
-    font-size: 0.8em;
-    margin-bottom: 15px;
 }
 
 .portfolio-item .overlay a {
-    background-color: #007bff;
+    background: #007bff;
     color: #fff;
     padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
+    border-radius: 50px;
     text-decoration: none;
-    font-weight: bold;
+    transition: background-color 0.3s ease;
 }
 
-.about-us {
-    padding: 40px 0;
-    text-align: center;
+.portfolio-item .overlay a:hover {
+    background: #00d4ff;
 }
 
-.about-us p {
-    font-size: 1em;
-    line-height: 1.5;
-    margin-bottom: 30px;
-}
-
-.about-us a {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    place-items: center;
-}
-
-.hebrow {
-
-    padding: 40px 0;
-    text-align: center;
-
-}
-
-.hebrow a {
-    background-color: #007bff;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    place-items: center;
-}
-
-/* Contact Section Styling */
-.contact {
-    padding: 80px 0;
-    /* Adjust padding as needed */
-    background-color: #f2f2f2;
-    /* Light gray background */
-    text-align: center;
-    /* Center content horizontally */
-}
-
-.contact h2 {
-    font-size: 2em;
-    /* Adjust heading size */
-    color: #333;
-    /* Dark gray heading color */
-    margin-bottom: 20px;
-    /* Add space after heading */
-}
-
-.contact p {
-    font-size: 1em;
-    /* Adjust paragraph text size */
-    color: #666;
-    /* Light gray text color */
-    line-height: 1.5;
-    /* Adjust line spacing for readability */
-    margin-bottom: 20px;
-    /* Add space between paragraphs */
-}
-
-
-.contact-info {
-    display: inline-block;
-    /* Display contact info inline */
-    margin-left: 10px;
-    /* Add space between icon and text */
-}
-
-.contact-icon {
-    font-size: 1.5em;
-    /* Adjust icon size */
-    color: #333;
-    /* Dark gray icon color */
-}
-
-.contact-info a {
-    color: #007bff;
-    /* Blue link color */
-    text-decoration: none;
-    /* Remove underline by default */
-    transition: color 0.3s ease;
-    /* Smooth color transition */
-}
-
-.contact-info a:hover {
-    text-decoration: underline;
-    /* Add underline on hover */
-}
-
-/* Responsive Media Query (Optional) */
-@media (max-width: 768px) {
-    .contact form label {
-        width: 100%;
-        /* Adjust label width for smaller screens */
-    }
-
-    .contact form input,
-    .contact form textarea {
-        width: 100%;
-        /* Adjust input/textarea width for smaller screens */
-    }
-}
-
-
-
+/* Footer */
 footer {
-    background-color: #f2f2f2;
+    background: #333;
+    color: #fff;
     padding: 20px 0;
     text-align: center;
+    /* Center-align footer text */
+    direction: rtl;
+    /* Ensure proper alignment for Hebrew text */
 }
 
 footer p {
-    font-size: 0.8em;
-    margin-bottom: 10px;
-    color: #666;
+    font-size: 0.9rem;
+    margin: 0;
 }
 
 footer a {
-    color: #333;
+    color: #00d4ff;
     text-decoration: none;
-    margin-right: 10px;
+    transition: color 0.3s ease;
 }
 
 footer a:hover {
-    text-decoration: underline;
+    color: #fff;
 }
 
-
-@media (max-width: 768px) {
-    footer p {
-        font-size: 0.7em;
-    }
+/* Enhance the Contact section with a modern look and nicer button */
+.contact {
+    text-align: center;
+    /* Center-align all text in the contact section */
+    direction: rtl;
+    /* Ensure proper alignment for Hebrew text */
+    margin: 0 auto;
+    /* Center the section itself */
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    /* Add a subtle gradient background */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width: 768px) {
-    header nav {
-        padding: 10px 0;
-    }
+.contact h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
 
-    header nav a {
-        padding: 5px 10px;
-    }
+.contact p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #555;
+}
 
-    .hero-content {
-        max-width: 100%;
-    }
+.contact a {
+    display: inline-block;
+    /* Make the button inline-block for better styling */
+    background: linear-gradient(135deg, #007bff, #00d4ff);
+    /* Add a gradient background */
+    color: #fff;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-    .services,
-    .portfolio {
-        justify-content: center;
-    }
+.contact a:hover {
+    background: linear-gradient(135deg, #00d4ff, #007bff);
+    /* Reverse the gradient on hover */
+    transform: scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
 
-    .service-card,
-    .portfolio-item {
-        width: calc(50% - 20px);
-        margin: 10px;
-    }
+.contact .contact-icon {
+    font-size: 1.5rem;
+    margin-right: 10px;
+    color: #007bff;
+}
 
-    .about-us p,
-    .contact form label {
-        width: 100%;
-    }
+.contact .contact-info {
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 15px;
+}
 
-    .contact form input,
-    .contact form textarea {
-        width: 100%;
-    }
+/* Center-align the About Us section and style the button */
+.about-us {
+    text-align: center;
+    /* Center-align all text in the About Us section */
+    direction: rtl;
+    /* Ensure proper alignment for Hebrew text */
+    margin: 0 auto;
+    /* Center the section itself */
+    padding: 20px;
+}
+
+.about-us a {
+    display: inline-block;
+    /* Make the button inline-block for better styling */
+    background: linear-gradient(135deg, #007bff, #00d4ff);
+    /* Add a gradient background */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.about-us a:hover {
+    background: linear-gradient(135deg, #00d4ff, #007bff);
+    /* Reverse the gradient on hover */
+    transform: scale(1.1);
+}
+
+/* Center-align the Hebrew section */
+.hebrow {
+    text-align: center;
+    /* Center-align all text in the Hebrew section */
+    direction: rtl;
+    /* Ensure proper alignment for Hebrew text */
+    margin: 0 auto;
+    /* Center the section itself */
+    padding: 20px;
+}
+
+.hebrow a {
+    display: inline-block;
+    /* Make the button inline-block for better styling */
+    background: linear-gradient(135deg, #ff7b00, #ffb400);
+    /* Add a gradient background */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    margin-top: 20px;
+}
+
+.hebrow a:hover {
+    background: linear-gradient(135deg, #ffb400, #ff7b00);
+    /* Reverse the gradient on hover */
+    transform: scale(1.1);
+}
+
+/* Center-align the 'serv' word */
+#serv {
+    text-align: center;
+    /* Center-align the text */
+    font-size: 2rem;
+    /* Ensure it has a prominent size */
+    margin: 20px 0;
+    /* Add spacing around it */
+    direction: rtl;
+    /* Ensure proper alignment for Hebrew text */
+}
+
+/* Reduce the size of #newlogos to 50% of its current size */
+#newlogos {
+    max-width: 3.75%;
+    /* Reduce the maximum width to 3.75% of the container */
+    height: auto;
+    /* Maintain aspect ratio */
+    margin: 5px auto;
+    /* Keep the adjusted margin */
+    border-radius: 3px;
+    /* Maintain the reduced border radius */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    /* Keep the subtle shadow */
+}
+
+/* Adjust the hero image to make it smaller and position it slightly lower */
+.hero img {
+    max-width: 50%;
+    /* Reduce the size of the hero image */
+    height: auto;
+    /* Maintain aspect ratio */
+    margin-top: 20px;
+    /* Add margin to position it slightly lower */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* Center the image horizontally */
 }
